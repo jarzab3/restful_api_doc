@@ -1,7 +1,7 @@
-# restful_api_doc
-Swagger, flask usage in order to build simple but readable API along with its documentation.
+Rest API doc app
+=============
 
+This repository contains boilerplate code for a RESTful API based on Flask and Flask-RESTPlus.
 
-### Used tutorial: http://michal.karzynski.pl/blog/2016/06/19/building-beautiful-restful-apis-using-flask-swagger-ui-flask-restplus/
-Author: Michal Karzynski
-
+The code of this demo app is described in an article:
+http://michal.karzynski.pl/blog/2016/06/19/building-beautiful-restful-apis-using-flask-swagger-ui-flask-restplus/
