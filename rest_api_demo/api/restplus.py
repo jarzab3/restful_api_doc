@@ -8,7 +8,7 @@ from sqlalchemy.orm.exc import NoResultFound
 log = logging.getLogger(__name__)
 
 api = Api(version='1.0', title='WolfSSL API documentation',
-          description='A simple documentation application of a Flask RestPlus powered API')
+          description='Documentation page for CryptoQuantique API')
 
 
 @api.errorhandler

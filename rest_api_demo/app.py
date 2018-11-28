@@ -3,8 +3,9 @@ import logging.config
 import os
 from flask import Flask, Blueprint
 from rest_api_demo import settings
-from rest_api_demo.api.blog.endpoints.endpoints import ns as blog_posts_namespace
-from rest_api_demo.api.blog.endpoints.categories import ns as blog_categories_namespace
+from rest_api_demo.api.wolf_ssl_api.endpoints.DeviceConnectedEndpoint import ns as device_connected_endpoint
+from rest_api_demo.api.wolf_ssl_api.endpoints.DataReceivedEndpoint import ns as data_received_endpoint
+from rest_api_demo.api.wolf_ssl_api.endpoints.ConfigureDeviceCertificateIssuanceEndpoint import ns as config_dev_cert_endpoint
 from rest_api_demo.api.restplus import api
 from rest_api_demo.database import db
 
@@ -26,13 +27,12 @@ def configure_app(flask_app):
 
 def initialize_app(flask_app):
     configure_app(flask_app)
-
     blueprint = Blueprint('api', __name__, url_prefix='')
     api.init_app(blueprint)
-    api.add_namespace(blog_posts_namespace)
-    api.add_namespace(blog_categories_namespace)
+    api.add_namespace(device_connected_endpoint)
+    api.add_namespace(data_received_endpoint)
+    api.add_namespace(config_dev_cert_endpoint)
     flask_app.register_blueprint(blueprint)
-
     db.init_app(flask_app)
 
 

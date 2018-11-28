@@ -6,5 +6,5 @@ pagination_arguments.add_argument('bool', type=bool, required=False, default=1, 
 pagination_arguments.add_argument('per_page', type=int, required=False, choices=[2, 10, 20, 30, 40, 50],
                                   default=10, help='Results per page {error_msg}')
 
-test_arguments = reqparse.RequestParser()
-test_arguments.add_argument('page', type=int, required=False, default=1, help='Page number')
+device_connected_arguments = reqparse.RequestParser()
+device_connected_arguments.add_argument('device_id', type=str, required=True, default='', help='Device ID')

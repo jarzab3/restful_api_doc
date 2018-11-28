@@ -29,3 +29,26 @@ category = api.model('Blog category', {
 category_with_posts = api.inherit('Blog category with posts', category, {
     'posts': fields.List(fields.Nested(blog_post))
 })
+
+data_received = api.model('Data received', {
+    'data_received': fields.String(readOnly=True, required=True,
+                                   description='Custom endpoint to which notification will be send.'),
+})
+
+device_connected = api.model('Device connected', {
+    'device_connected': fields.String(readOnly=True, required=True,
+                                      description='Custom endpoint to which notification will be send.'),
+})
+
+model = api.model('Person', {
+    'name': fields.String,
+    'age': fields.Integer,
+    'boolean': fields.Boolean,
+}, mask='{name,age}')
+
+config_cert_issuance = api.model('config_cert_issuance', {
+    'device_id': fields.String(readOnly=True, required=True,
+                               description='The unique identifier of a device'),
+    'enable': fields.Boolean(readOnly=True, required=True,
+                             description='Boolean value'),
+}, mask='{device_id}')
